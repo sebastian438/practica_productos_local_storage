@@ -13,7 +13,12 @@
         </header>
         <main>
             <section>
-                <form action="">
+                <form
+                    id="formulario"  
+                    action="js/main.js" 
+                    method="post" 
+                    novalidate 
+                    name="formulario">
                     <input type="text" name="producto" id="producto" placeholder="Escriba un producto">
                     <input type="submit">
                 </form>
@@ -27,7 +32,7 @@
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody id="tabla-producto">
+                    <tbody id="tabla_productos">
                         <!-- <tr>
                             <td></td>
                             <td></td>
