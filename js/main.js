@@ -1,6 +1,7 @@
 const tabla_productos = document.querySelector("#tabla_productos");
 const formulario = document.querySelector("#formulario");
 const fragment = document.createDocumentFragment();
+const boton = document.querySelector("tbody");
 
 
 formulario.addEventListener("submit",(event) => {
@@ -53,8 +54,12 @@ const agregarProductos = (productoName) => {
 }
 
 const eliminarProductos = () => {
-
-}
+    boton.addEventListener("click", (ev) => {
+        if (ev.target.matches(".button")) {
+            console.log(ev.target);
+        }
+    });
+};
 
 const pintarTabla = () => {
     tabla_productos.innerHTML = ""; 
@@ -75,10 +80,9 @@ const pintarTabla = () => {
             
             const botonEliminar = document.createElement("BUTTON");
             botonEliminar.textContent = "eliminar";
+            botonEliminar.classList.add("button");
+            
 
-        
-
-        
             filaTabla.append(columnaTabla);
             filaTabla.append(columnaTabla02);
             columnaEliminar.append(botonEliminar);
@@ -92,7 +96,10 @@ const pintarTabla = () => {
     
         const productos = recogerLocalStorage();
         console.log(productos, "pintar tabla");
+        
     }  
+
+
 
 
 }
@@ -101,6 +108,7 @@ const pintarTabla = () => {
 
 
 pintarTabla();
+eliminarProductos();
 
 
 
